@@ -1,0 +1,21 @@
+.universities {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.list {
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+}
+
+.university {
+	border: 1px solid var(--text-color);
+	border-radius: 1rem;
+	padding: 1rem;
+	margin: 1rem;
+	cursor: pointer;
+	text-decoration: none;
+}

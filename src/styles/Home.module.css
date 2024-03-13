@@ -1,0 +1,107 @@
+.home {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.welcomeBanner {
+	position: relative;
+
+	> img {
+		width: 100vw;
+		object-fit: cover;
+		object-position: 50% top;
+		height: 40rem;
+	}
+
+	> h1 {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		text-align: center;
+		font-weight: 900;
+		color: #f5f5fa;
+		font-size: 3rem;
+		animation: h1 0.5s ease-in-out 0.3s normal both;
+
+		> span {
+			color: transparent;
+			background-image: linear-gradient(
+				0deg,
+				rgba(46, 26, 117, 1) 10%,
+				rgba(139, 25, 173, 1) 65%
+			);
+			background-clip: text;
+		}
+	}
+}
+
+.about {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 5rem 2rem;
+	max-width: 60rem;
+
+	> h2 {
+		margin-right: 2rem;
+	}
+}
+
+.button {
+	text-decoration: none;
+	padding: 1rem 2rem;
+	border: 2px solid var(--text-color);
+	border-radius: 2rem;
+	background-color: transparent;
+	color: var(--text-color);
+	font-weight: 500;
+	margin-bottom: 5rem;
+	transition: all 0.3s ease-in-out;
+	animation: button 0.3s ease-in-out 0.3s normal both;
+	animation-timeline: scroll();
+}
+
+.button:hover {
+	background-color: var(--text-color);
+	color: var(--background-color);
+}
+
+@keyframes h1 {
+	from {
+		transform: translate(-50%, 20rem);
+		opacity: 0;
+	}
+	to {
+		transform: translate(-50%, -50%);
+		opacity: 1;
+	}
+}
+
+@keyframes button {
+	from {
+		opacity: 0;
+		scale: 0;
+	}
+	to {
+		opacity: 1;
+		scale: 1;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.about {
+		flex-direction: column;
+		text-align: center;
+
+		> h2 {
+			margin: 0;
+		}
+	}
+
+	.howItWorks {
+		flex-direction: column;
+	}
+}
