@@ -38,6 +38,8 @@ const Filter: React.FC<TFilterProps> = ({
 			<input
 				onChange={e => setSearchInput(e.target.value)}
 				placeholder='univeristy name'
+				id='search'
+				autoComplete='off'
 			/>
 			<div className={styles.functions}>
 				<select

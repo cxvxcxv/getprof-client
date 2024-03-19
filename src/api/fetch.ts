@@ -15,7 +15,7 @@ export async function getUniversities(): Promise<TUniversity[]> {
 export async function getUniversity(id: string): Promise<TUniversity> {
 	try {
 		const res = await axios.get(`/api/universities/${id}`);
-		return res.data;
+		return res.data[0];
 	} catch (err: unknown) {
 		if (err instanceof AxiosError && err.response)
 			throw new Error(err.response.data.error);

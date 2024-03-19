@@ -1,0 +1,16 @@
+.university {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 1rem;
+	line-height: 2;
+}
+
+h1 {
+	font-size: 3rem;
+	font-weight: 600;
+}
+
+h2 {
+	font-size: 2rem;
+}

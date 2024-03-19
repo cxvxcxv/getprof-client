@@ -15,8 +15,14 @@ export type TUniversity = {
 	study_exchange: boolean;
 	dormitory_location: string;
 	dormitory_prices: number;
+	dormitory_conditions: number;
 	accomodation_prices: number;
 	students_attitude: string;
 	teachers_attitude: string;
 	website: string;
+};
+
+export type TLoad = {
+	isLoading: boolean;
+	isLoadError: boolean;
 };
