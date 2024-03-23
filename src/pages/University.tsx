@@ -82,7 +82,7 @@ const University = () => {
 					</p>
 					<p>
 						accomodation prices near the university:{' '}
-						{university.accomodation_prices}&#8376;
+						{university.accomodation_prices}
 					</p>
 					<Link to='../filter'>back</Link>
 				</div>

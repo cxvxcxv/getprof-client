@@ -21,9 +21,18 @@ const Filter: React.FC<TFilterProps> = ({
 	const [searchInput, setSearchInput] = useState<string>('');
 
 	useEffect(() => {
-		const filteredUniversities = allUniversities.filter(item =>
-			item.name.toLowerCase().includes(searchInput.toLowerCase().trim())
-		);
+		const filteredUniversities = allUniversities.filter(university => {
+			const searchValue = searchInput.toLowerCase().trim();
+			const universityName = university.name.toLowerCase();
+			const professions = university.professions || [];
+
+			const nameMatch = universityName.includes(searchValue);
+			const professionMatch = professions.some(profession =>
+				profession.toLowerCase().includes(searchValue)
+			);
+
+			return nameMatch || professionMatch;
+		});
 
 		const sortedUniversities = sortUniversities.sort(
 			sortBy,
@@ -37,7 +46,7 @@ const Filter: React.FC<TFilterProps> = ({
 		<section className={styles.filter}>
 			<input
 				onChange={e => setSearchInput(e.target.value)}
-				placeholder='univeristy name'
+				placeholder='univeristy name / profession'
 				id='search'
 				autoComplete='off'
 			/>
